@@ -66,4 +66,113 @@ public static void main(String[] args){
     }
 }
 
+    //buy seat method
+    public static void buy_seat() {
+
+        try {
+            Scanner buy_seat = new Scanner(System.in);
+            System.out.print("  input a row letter  : ");
+            String seat_number_row_letter = buy_seat.nextLine().toUpperCase(Locale.ROOT);
+            System.out.print("  input a seat number : ");
+            int seat_number = buy_seat.nextInt();
+            switch (seat_number_row_letter) {
+                case "A":
+                    if ((row_A[seat_number - 1]) == 0) {
+                        row_A[seat_number - 1] = 1;
+                        buy_seat.nextLine();
+                        System.out.print("Enter Your Name: ");
+                        String name = buy_seat.nextLine();
+                        System.out.print(" Enter Your surname : ");
+                        String surname = buy_seat.nextLine();
+                        System.out.print(" Enter Your email : ");
+                        String email = buy_seat.nextLine();
+                        System.out.println();
+                        System.out.println("Your Seat Booked Successfully...");
+                        Person info = new Person(name, surname, email);
+                        int priceA = SeatPrice(seat_number);
+                        Ticket infoUser = new Ticket("A", priceA, seat_number, info);
+                        info_RowA[seat_number - 1] = infoUser;
+                        infoUser.Save_File();
+
+                        totalTicketsSold++;
+                    } else {
+                        System.out.println("This seat already booked...");
+                    }
+                    break;
+                case "B":
+                    if ((row_B[seat_number - 1]) == 0) {
+                        row_B[seat_number - 1] = 1;
+                        buy_seat.nextLine();
+                        System.out.print("Enter Your Name: ");
+                        String name = buy_seat.nextLine();
+                        System.out.print(" Enter Your surname : ");
+                        String surname = buy_seat.nextLine();
+                        System.out.print(" Enter Your email : ");
+                        String email = buy_seat.nextLine();
+                        System.out.println();
+                        System.out.println(" Your Seat Booked Successfully...");
+                        Person info = new Person(name, surname, email);
+                        int priceB = SeatPrice(seat_number);
+                        Ticket infoUser = new Ticket("B", priceB, seat_number, info);
+                        info_RowB[seat_number - 1] = infoUser;
+                        infoUser.Save_File();
+                        totalTicketsSold++;
+                    } else {
+                        System.out.println("This seat already booked...");
+                    }
+                    break;
+                case "C":
+                    if ((row_C[seat_number - 1]) == 0) {
+                        row_C[seat_number - 1] = 1;
+                        buy_seat.nextLine();
+                        System.out.print("Enter Your Name: ");
+                        String name = buy_seat.nextLine();
+                        System.out.print(" Enter Your surname : ");
+                        String surname = buy_seat.nextLine();
+                        System.out.print(" Enter Your email : ");
+                        String email = buy_seat.nextLine();
+                        System.out.println();
+                        System.out.println("Your Seat Booked Successfully...");
+                        Person info = new Person(name, surname, email);
+                        int priceC = SeatPrice(seat_number);
+                        Ticket infoUser = new Ticket("C", priceC, seat_number, info);
+                        info_RowC[seat_number - 1] = infoUser;
+                        infoUser.Save_File();
+                        totalTicketsSold++;
+                    } else {
+                        System.out.println("This seat already booked...");
+                    }
+                    break;
+                case "D":
+                    if ((row_D[seat_number - 1]) == 0) {
+                        row_D[seat_number - 1] = 1;
+                        buy_seat.nextLine();
+                        System.out.print("Enter Your Name: ");
+                        String name = buy_seat.nextLine();
+                        System.out.print(" Enter Your surname : ");
+                        String surname = buy_seat.nextLine();
+                        System.out.print(" Enter Your email : ");
+                        String email = buy_seat.nextLine();
+                        System.out.println();
+                        System.out.println("Your Seat Booked Successfully...");
+                        Person info = new Person(name, surname, email);
+                        int price = SeatPrice(seat_number);
+                        Ticket infoUser = new Ticket("D", price, seat_number, info);
+                        info_RowD[seat_number - 1] = infoUser;
+                        infoUser.Save_File();
+                        totalTicketsSold++;
+                    } else {
+                        System.out.println("This seat already booked...");
+                    }
+                    break;
+                default:
+                    System.out.println("Invalid Row Number...");
+                    break;
+            }
+        } catch (Exception e) {
+            System.out.println("Invalid Seat Number...");
+        }
+
+    }
+
 }
