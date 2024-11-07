@@ -19,54 +19,7 @@ public class w2053199_PlaneManagement {
     static int totalTicketsSold = 0;
     static double totalprice = 0.0;
 
-    // main method
-public static void main(String[] args){
-    Scanner SelectOption = new Scanner(System.in);
-    int option = 9;
-    while (option != 0){
-        try{
-            print_options();
-            System.out.print(" Please Select an Option : ");
-            option = SelectOption.nextInt();
-
-
-            switch (option) {
-
-                case 1:
-                    buy_seat();
-                    break;
-                case 2:
-                    cancel_seat();
-                    break;
-                case 3:
-                    find_first_available();
-                    break;
-                case 4:
-                    seat_Plan();
-                    break;
-                case 5:
-                    print_ticket_info();
-                    break;
-                case 6:
-                    search_ticket();
-                    break;
-
-                case 0:
-                    System.out.println(" Program Exit , GOOD BYE ");
-                    System.exit(0);
-                    break;
-
-                default:
-                    System.out.println("Input must be a letter & Input correct option ");
-            }
-        } catch (InputMismatchException e){
-            System.out.println("Input must be a letter & Input correct option ");
-            SelectOption.next();
-        }
-    }
-}
-
-    //buy seat method
+        //buy seat method
     public static void buy_seat() {
 
         try {
@@ -174,5 +127,118 @@ public static void main(String[] args){
         }
 
     }
+       //cancel seat method
+    public static void cancel_seat() {
+        Scanner cancel_seat = new Scanner(System.in);
+        try {
+            System.out.print("  input a row letter  : ");
+            String seat_number_row_letter = cancel_seat.nextLine().toUpperCase(Locale.ROOT);
+            System.out.print("  input a seat number : ");
+            int seat_number = cancel_seat.nextInt();
+            switch (seat_number_row_letter) {
+                case "A":
+                    if ((row_A[seat_number - 1]) == 1) {
+                        row_A[seat_number - 1] = 0;
+                        cancel_seat.nextLine();
+                        info_RowA[seat_number-1].delete();
+                        System.out.println();
+                        System.out.println("Seat Cancel...");
+
+                        totalTicketsSold--;
+                    } else {
+                        System.out.println("This seat is not booked...");
+                    }
+                    break;
+                case "B":
+                    if ((row_B[seat_number - 1]) == 1) {
+                        row_B[seat_number - 1] = 0;
+                        info_RowB[seat_number-1].delete();
+                        cancel_seat.nextLine();
+                        System.out.println();
+                        System.out.println("Seat Cancel...");
+                        totalTicketsSold--;
+                    } else {
+                        System.out.println("This seat is not booked...");
+                    }
+                    break;
+                case "C":
+                    if ((row_C[seat_number - 1]) == 1) {
+                        row_C[seat_number - 1] = 0;
+                        info_RowC[seat_number-1].delete();
+                        cancel_seat.nextLine();
+                        System.out.println();
+                        System.out.println("Seat Cancel...");
+                        totalTicketsSold--;
+                    } else {
+                        System.out.println("This seat is not booked...");
+                    }
+                    break;
+                case "D":
+                    if ((row_D[seat_number - 1]) == 1) {
+                        row_D[seat_number - 1] = 0;
+                        info_RowD[seat_number-1].delete();
+                        cancel_seat.nextLine();
+                        System.out.println();
+                        System.out.println("Seat Cancel...");
+                        totalTicketsSold--;
+                    } else {
+                        System.out.println("This seat is not booked...");
+                    }
+                    break;
+                default:
+                    System.out.println("Invalid Row Number...");
+                    break;
+            }
+        } catch (Exception e) {
+            System.out.println("Invalid Seat Number...");
+        }
+    }
+
+    // main method
+public static void main(String[] args){
+    Scanner SelectOption = new Scanner(System.in);
+    int option = 9;
+    while (option != 0){
+        try{
+            print_options();
+            System.out.print(" Please Select an Option : ");
+            option = SelectOption.nextInt();
+
+
+            switch (option) {
+
+                case 1:
+                    buy_seat();
+                    break;
+                case 2:
+                    cancel_seat();
+                    break;
+                case 3:
+                    find_first_available();
+                    break;
+                case 4:
+                    seat_Plan();
+                    break;
+                case 5:
+                    print_ticket_info();
+                    break;
+                case 6:
+                    search_ticket();
+                    break;
+
+                case 0:
+                    System.out.println(" Program Exit , GOOD BYE ");
+                    System.exit(0);
+                    break;
+
+                default:
+                    System.out.println("Input must be a letter & Input correct option ");
+            }
+        } catch (InputMismatchException e){
+            System.out.println("Input must be a letter & Input correct option ");
+            SelectOption.next();
+        }
+    }
+}
 
 }
