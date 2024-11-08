@@ -193,7 +193,21 @@ public class w2053199_PlaneManagement {
             System.out.println("Invalid Seat Number...");
         }
     }
-
+  //find_first_available method
+    public static void find_first_available() {
+        boolean find_seat = false;
+        for (int i = 0; i < seatArray.length; i++) {
+            for (int j = 0; j < seatArray[i].length; j++) {
+                if (seatArray[i][j] == 0) {
+                    System.out.println("First available seat is " + (char) ('A' + i) + ", Seat " + (j + 1));
+                    find_seat = true;
+                    break;
+                }
+            }
+            if (find_seat) break;
+        }
+        if (!find_seat) System.out.println("No available seats found.");
+    }
     // main method
 public static void main(String[] args){
     Scanner SelectOption = new Scanner(System.in);
