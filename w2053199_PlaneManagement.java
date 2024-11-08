@@ -208,6 +208,23 @@ public class w2053199_PlaneManagement {
         }
         if (!find_seat) System.out.println("No available seats found.");
     }
+    // Seat Plan method
+    static void seat_Plan() {
+        System.out.println();
+        for (int i = 0; i < seatArray.length; i++) {
+            for (int j = 0; j < seatArray[i].length; j++) {
+                if (seatArray[i][j] == 0) {
+                    System.out.print(" O ");
+
+                } else if (seatArray[i][j] == 1) {
+                    System.out.print(" X ");
+                }
+            }
+
+            System.out.println();
+        }
+
+    }
     // main method
 public static void main(String[] args){
     Scanner SelectOption = new Scanner(System.in);
