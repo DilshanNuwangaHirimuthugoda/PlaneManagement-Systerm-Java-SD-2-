@@ -279,6 +279,24 @@ public class w2053199_PlaneManagement {
                 case "A":
                     SeatSearch(SearchSeat, info_RowA, row_A);
                     return;
+                      case "B":
+                    SeatSearch(SearchSeat, info_RowB, row_B);
+                    return;
+                case "C":
+                    SeatSearch(SearchSeat, info_RowC, row_C);
+                    return;
+                case "D":
+                    SeatSearch(SearchSeat, info_RowD, row_D);
+                    return;
+                default:
+                    System.out.println("Invalid option.");
+                    return;
+            }
+        } catch (InputMismatchException e) {
+            System.out.print("Row must be a letter");
+            input.next();
+        }
+
     // main method
 public static void main(String[] args){
     Scanner SelectOption = new Scanner(System.in);
