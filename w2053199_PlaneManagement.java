@@ -311,4 +311,18 @@ public static void main(String[] args){
     }
 }
 
+//SeatPrice method
+public static int SeatPrice(int seat) {
+    if (seat <= 4) {
+        return  200;
+    } else if (seat < 9) {
+        return 150;
+    } else if (seat < 14) {
+        return 180;
+    }
+    return seat;
+}
+}
+
+
 }
