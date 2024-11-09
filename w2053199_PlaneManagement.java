@@ -225,6 +225,45 @@ public class w2053199_PlaneManagement {
         }
 
     }
+    //print ticket info method
+    public static void print_ticket_info() {
+
+
+        // Loop through the soldTickets array and print ticket information
+        System.out.println();
+        System.out.println("********* Tickets Information *******");
+        System.out.println();
+        System.out.println("Total Tickets Sold : " + totalTicketsSold);
+        System.out.println();
+        for (int i = 0; i < seatArray.length; i++) {
+            for (int j = 0; j < seatArray[i].length; j++) {
+                if (seatArray[i][j] == 1) {
+                    switch (i) {
+                        case 0:
+                            info_RowA[j].print_Ticket();
+                            totalprice+=info_RowA[j].getPrice();
+                            break;
+                        case 1:
+                            info_RowB[j].print_Ticket();
+                            totalprice+=info_RowB[j].getPrice();
+                            break;
+                        case 2:
+                            info_RowC[j].print_Ticket();
+                            totalprice+=info_RowC[j].getPrice();
+                            break;
+                        case 3:
+                            info_RowD[j].print_Ticket();
+                            totalprice+=info_RowD[j].getPrice();
+                            break;
+                    }
+                    System.out.println();
+                }
+            }
+        }
+        System.out.println("total price: £ " + totalprice);
+
+
+    }
     // main method
 public static void main(String[] args){
     Scanner SelectOption = new Scanner(System.in);
