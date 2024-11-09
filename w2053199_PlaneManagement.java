@@ -264,6 +264,21 @@ public class w2053199_PlaneManagement {
 
 
     }
+
+    // search_ticket method
+    static void search_ticket() {
+        Scanner input = new Scanner(System.in);
+        try {
+            System.out.print("Enter the Row:");
+            String SearchRow = input.next().toUpperCase();
+
+            System.out.print("Enter the seat number:");
+            int SearchSeat = input.nextInt();
+            SearchSeat -= 1;
+            switch (SearchRow) {
+                case "A":
+                    SeatSearch(SearchSeat, info_RowA, row_A);
+                    return;
     // main method
 public static void main(String[] args){
     Scanner SelectOption = new Scanner(System.in);
