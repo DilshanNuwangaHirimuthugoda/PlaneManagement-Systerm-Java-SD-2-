@@ -318,6 +318,16 @@ public static void print_options() {
     System.out.println("***********************************");
     System.out.println("*           Menu Option           *");
     System.out.println("***********************************");
+
+        System.out.println(" 1) Buy a Seat ");
+    System.out.println(" 2) Cancel a Seat ");
+    System.out.println(" 3) Find First Available Seat ");
+    System.out.println(" 4) Show Seating Plan ");
+    System.out.println(" 5) Print tickets information and total sales ");
+    System.out.println(" 6) Search ticket ");
+    System.out.println(" 0) Quit ");
+    System.out.println("***********************************");
+}
     // main method
 public static void main(String[] args){
     Scanner SelectOption = new Scanner(System.in);
