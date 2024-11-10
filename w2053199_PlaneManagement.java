@@ -297,6 +297,18 @@ public class w2053199_PlaneManagement {
             input.next();
         }
 
+        //SeatSearch method
+    public static void SeatSearch(int Input1, Ticket[] InputArray, int[] seat_row_entered) {
+        if (seat_row_entered[Input1] == 0) {
+            System.out.println("Seat is available");
+        } else if (seat_row_entered[Input1] == 1) {
+            System.out.println("Ticket is already booked");
+            InputArray[Input1].print_Ticket();
+        } else {
+            System.out.println("Invalid input or seat status");
+        }
+    }
+
     // main method
 public static void main(String[] args){
     Scanner SelectOption = new Scanner(System.in);
