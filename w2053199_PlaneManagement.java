@@ -309,6 +309,15 @@ public class w2053199_PlaneManagement {
         }
     }
 
+
+// print_options method
+public static void print_options() {
+    System.out.println();
+    System.out.println(" Welcome to the Plane Management Application ");
+    System.out.println();
+    System.out.println("***********************************");
+    System.out.println("*           Menu Option           *");
+    System.out.println("***********************************");
     // main method
 public static void main(String[] args){
     Scanner SelectOption = new Scanner(System.in);
