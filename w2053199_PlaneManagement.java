@@ -19,7 +19,7 @@ public class w2053199_PlaneManagement {
     static int totalTicketsSold = 0;
     static double totalprice = 0.0;
 
-        //buy seat method
+    //buy seat method
     public static void buy_seat() {
 
         try {
@@ -127,7 +127,8 @@ public class w2053199_PlaneManagement {
         }
 
     }
-       //cancel seat method
+
+    //cancel seat method
     public static void cancel_seat() {
         Scanner cancel_seat = new Scanner(System.in);
         try {
@@ -193,7 +194,8 @@ public class w2053199_PlaneManagement {
             System.out.println("Invalid Seat Number...");
         }
     }
-  //find_first_available method
+
+    //find_first_available method
     public static void find_first_available() {
         boolean find_seat = false;
         for (int i = 0; i < seatArray.length; i++) {
@@ -208,7 +210,8 @@ public class w2053199_PlaneManagement {
         }
         if (!find_seat) System.out.println("No available seats found.");
     }
-    // Seat Plan method
+
+// Seat Plan method
     static void seat_Plan() {
         System.out.println();
         for (int i = 0; i < seatArray.length; i++) {
@@ -225,7 +228,7 @@ public class w2053199_PlaneManagement {
         }
 
     }
-    //print ticket info method
+//print ticket info method
     public static void print_ticket_info() {
 
 
@@ -265,7 +268,7 @@ public class w2053199_PlaneManagement {
 
     }
 
-    // search_ticket method
+// search_ticket method
     static void search_ticket() {
         Scanner input = new Scanner(System.in);
         try {
@@ -279,7 +282,7 @@ public class w2053199_PlaneManagement {
                 case "A":
                     SeatSearch(SearchSeat, info_RowA, row_A);
                     return;
-                      case "B":
+                case "B":
                     SeatSearch(SearchSeat, info_RowB, row_B);
                     return;
                 case "C":
@@ -297,7 +300,8 @@ public class w2053199_PlaneManagement {
             input.next();
         }
 
-        //SeatSearch method
+    }
+//SeatSearch method
     public static void SeatSearch(int Input1, Ticket[] InputArray, int[] seat_row_entered) {
         if (seat_row_entered[Input1] == 0) {
             System.out.println("Seat is available");
@@ -319,7 +323,7 @@ public static void print_options() {
     System.out.println("*           Menu Option           *");
     System.out.println("***********************************");
 
-        System.out.println(" 1) Buy a Seat ");
+    System.out.println(" 1) Buy a Seat ");
     System.out.println(" 2) Cancel a Seat ");
     System.out.println(" 3) Find First Available Seat ");
     System.out.println(" 4) Show Seating Plan ");
@@ -328,7 +332,7 @@ public static void print_options() {
     System.out.println(" 0) Quit ");
     System.out.println("***********************************");
 }
-    // main method
+// main method
 public static void main(String[] args){
     Scanner SelectOption = new Scanner(System.in);
     int option = 9;
@@ -386,7 +390,4 @@ public static int SeatPrice(int seat) {
     }
     return seat;
 }
-}
-
-
 }
