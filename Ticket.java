@@ -83,3 +83,13 @@ public class Ticket {
         }
 
     }
+
+    public void delete() {
+        File file = new File(row + seat + ".txt");
+        if (file.exists()) {
+            file.delete();
+        }
+
+    }
+}
+
