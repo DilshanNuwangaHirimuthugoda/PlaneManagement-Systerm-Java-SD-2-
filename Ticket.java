@@ -1,3 +1,4 @@
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -17,7 +18,18 @@ public class Ticket {
         this.price = price;
         this.person = person;
     }
-    
+//print_Ticket method
+    public void print_Ticket() {
+        System.out.println("Row: " + row);
+        System.out.println("Seat: " + seat);
+        System.out.println("Price: £" + price);
+        System.out.println(("Name:" + person.getName()));
+        System.out.println(("Surname:" + person.getSurname()));
+        System.out.println(("Email:" + person.getEmail()));
+
+
+    }
+
     //Get row as String
     public String getRow() {
         return row;
