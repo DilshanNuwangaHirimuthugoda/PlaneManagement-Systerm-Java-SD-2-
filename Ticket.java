@@ -62,3 +62,24 @@ public class Ticket {
     public void setPerson(Person person) {
         this.person = person;
     }
+
+// file writer
+    public void Save_File() {
+        try {
+            if (person != null) {
+                // Access person information here
+
+                FileWriter file = new FileWriter(row + seat + ".txt");
+                file.write("Row :  " + row);
+                file.write("\nSeat number : " + seat);
+                file.write("\nPrice : £  " + price);
+                file.write("\nName : " + person.getName());
+                file.write("\nSurname : " + person.getSurname());
+                file.write("\nEmail : " + person.getEmail());
+                file.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
